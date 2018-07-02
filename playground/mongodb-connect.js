@@ -30,6 +30,10 @@ MongoClient.connect('mongodb://localhost:27017/BurgerBarn', {useNewUrlParser: tr
     }, err => {
         console.log(err);
     });
+
+    db.collection('Burgers').deleteMany({name: 'test1 burger'}).then((result) => {
+        console.log(result);
+    });
     
     // db.collection('Burgers').insertOne({
     //     name: 'All American',
